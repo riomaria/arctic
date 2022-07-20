@@ -13,10 +13,10 @@ body {
 
 html {
   font-style: normal;
-  font-weight: 400;
+  font-weight: $fw-normal;
   font-size: $fz-default;
-  line-height: 24px;
-  font-family: $ff-placeholder;
+  line-height: $lh-default;
+  font-family: $ff-default;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -34,21 +34,21 @@ body {
   background-color: $color-default-white;
 }
 
-a {
-  color: $color-default-black;
-  text-decoration: none;
-}
+// a {
+//   color: $color-default-black;
+//   text-decoration: none;
+// }
 
-img,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+// img,
+// video {
+//   display: block;
+//   max-width: 100%;
+//   height: auto;
+// }
 
-textarea {
-  resize: none;
-}
+// textarea {
+//   resize: none;
+// }
 
 // chrome autofill background removal
 // если на проекте у инпутов используются разные цвета фонов\текста -
@@ -56,11 +56,11 @@ textarea {
 // rgba не подойдет, сконвертируйте цвет в hex без прозрачности
 // если в стилях уже используется box-shadow есть другое решение -
 // задать к списку транзишенов `background-color 10000000s ease-out`
-input:-webkit-autofill {
-  box-shadow: inset 0 0 0 1000px $color-default-white;
+// input:-webkit-autofill {
+//   box-shadow: inset 0 0 0 1000px $color-default-white;
 
-  -webkit-text-fill-color: $color-default-black;
-}
+//   -webkit-text-fill-color: $color-default-black;
+// }
 
 // firefox placeholder \ invalid fix + ios bdrs
 input,
@@ -80,7 +80,7 @@ select {
   border-radius: 0;
 }
 
-// ie11 X removal
+ie11 X removal
 input {
   &::-ms-clear,
   &::-ms-reveal {
@@ -96,7 +96,7 @@ input[type="search"]::-webkit-search-results-decoration {
   appearance: none;
 }
 
-// input[number] arrows removal
+input[number] arrows removal
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   margin: 0;
