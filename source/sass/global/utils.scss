@@ -4,15 +4,23 @@
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  max-width: 1366px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: $color-default-white;
 
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
-  box-shadow: 0 5px 15px $color-quartz;
+  box-shadow: none;
   overflow: hidden;
+
+  @include vp-1023 {
+    box-shadow: 0 5px 15px $color-quartz;
+  }
+
+  @include vp-767 {
+    box-shadow: none;
+  }
 
   header,
   footer {
