@@ -1,0 +1,86 @@
+.intro {
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+
+  @include vp-1023 {
+    box-shadow: none;
+  }
+}
+
+.intro__inner {
+  position: absolute;
+  top: 50%;
+  left: 95px;
+  transform: translateY(-53%);
+
+  @include vp-1023 {
+    left: 0;
+  }
+
+  @include vp-767 {
+    transform: translateY(-51%);
+  }
+}
+
+.intro h2 {
+  max-width: 850px;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  padding-right: 30px;
+  font-size: $fz-huge;
+  line-height: $lh-huge;
+  font-weight: $fw-bold;
+  color: $color-default-white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include vp-1023 {
+    padding-right: 0;
+    font-size: $fz-pre-huge;
+    line-height: $lh-pre-huge;
+    text-shadow: none;
+  }
+
+  @include vp-767 {
+    max-width: 80%;
+    font-size: $fz-large;
+    line-height: $lh-large;
+  }
+}
+
+.intro p {
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  font-size: $fz-pre-interium;
+  line-height: $lh-default;
+  font-weight: $fw-normal;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    font-size: $fz-modarate;
+    line-height: $lh-pre-medium;
+  }
+
+  @include vp-767 {
+    max-width: 80%;
+    font-size: $fz-default;
+    line-height: $lh-medium;
+  }
+}
+
+.intro img {
+  height: 650px;
+  object-fit: cover;
+  object-position: center bottom;
+  background-color: $color-quartz;
+
+  @include vp-1023 {
+    height: 638px;
+  }
+
+  @include vp-767 {
+    height: 500px;
+  }
+}

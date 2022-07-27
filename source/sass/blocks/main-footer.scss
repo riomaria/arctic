@@ -1,0 +1,140 @@
+.main-footer {
+  min-height: 138px;
+  padding: 50px 0 40px 0;
+  background-color: $color-default-black;
+
+  @include vp-1023 {
+    min-height: 120px;
+    padding: 50px 0 35px 0;
+  }
+
+  @include vp-767 {
+    padding: 40px 0 25px 0;
+  }
+}
+
+.main-footer__inner {
+  display: flex;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.main-footer__logo {
+  margin-right: 40px;
+
+  @include vp-1023 {
+    margin-right: 25px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.main-footer__logo a {
+  display: block;
+  margin-top: -1px;
+  text-decoration: none;
+
+  @include vp-1023 {
+    margin-top: 0;
+  }
+}
+
+.main-footer__logo svg {
+  width: 70px;
+  height: 38px;
+  fill: $color-default-white;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    fill: $color-primary;
+  }
+
+  &:active {
+    fill: $color-primary--medium;
+  }
+
+  @include vp-1023 {
+    width: 38px;
+    height: 20px;
+  }
+
+  @include vp-767 {
+    width: 42px;
+    height: 22px;
+  }
+}
+
+.main-footer__navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 770px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-767 {
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+}
+
+.main-footer__navigation li {
+  margin-right: 33px;
+
+  @include vp-1023 {
+    margin-right: 24px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+}
+
+.main-footer__navigation a {
+  display: block;
+  padding: 9px 0 5px 0;
+  font-family: inherit;
+  line-height: $lh-modarate;
+  font-weight: $fw-medium;
+  color: $color-default-white;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary--medium;
+  }
+
+  &:disabled {
+    color: $color-quartz;
+  }
+
+  @include vp-1023 {
+    padding: 4px 0;
+    font-size: $fz-small;
+    line-height: $lh-normal;
+  }
+
+  @include vp-767 {
+    padding: 6px 0 6px 0;
+  }
+}
+
+.main-footer__social {
+  margin-left: auto;
+
+  @include vp-767 {
+    margin: 0;
+  }
+}
