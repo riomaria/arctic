@@ -1,0 +1,74 @@
+.map {
+  position: relative;
+  max-width: 560px;
+  height: 306px;
+
+  @include vp-1023 {
+    min-width: 324px;
+    height: 335px;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+    max-width: 100%;
+    height: 316px;
+  }
+}
+
+.map img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+  background-color: $color-quartz;
+}
+
+.map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+  border: none;
+}
+
+.map a {
+  position: absolute;
+  top: 71%;
+  left: 44.5%;
+  display: block;
+  text-decoration: none;
+  z-index: 3;
+
+  @include vp-1023 {
+    top: 65%;
+    left: 33.5%;
+  }
+
+  @include vp-767 {
+    top: 70.5%;
+    left: 39%;
+  }
+}
+
+.map[data-js="no-js"] a {
+  display: none;
+}
+
+.map svg {
+  fill: $color-default-black;
+
+  &:hover,
+  &:focus {
+    fill: $color-primary;
+  }
+
+  &:active {
+    fill: $color-primary--medium;
+  }
+}
