@@ -389,7 +389,7 @@ template {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Montserrat-Regular.woff2") format("woff2"), url("../../fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -397,7 +397,7 @@ template {
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Montserrat-Medium.woff2") format("woff2"), url("../../fonts/Montserrat-Medium.woff") format("woff");
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -405,7 +405,7 @@ template {
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../../fonts/Montserrat-SemiBold.woff") format("woff");
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
 }
 
 @font-face {
@@ -413,7 +413,7 @@ template {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Montserrat-Bold.woff2") format("woff2"), url("../../fonts/Montserrat-Bold.woff") format("woff");
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
 }
 
 *,
@@ -573,13 +573,13 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   min-width: 320px;
-  max-width: 1366px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: #f9fbfd;
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
-  -webkit-box-shadow: 0 5px 15px #d8d8d9;
-  box-shadow: 0 5px 15px #d8d8d9;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -650,6 +650,7 @@ button,
 }
 
 .container {
+  max-width: 1366px;
   width: 100%;
   margin: 0 auto;
   padding: 0 103px;
@@ -776,18 +777,26 @@ button,
 
 .intro {
   position: relative;
+  min-height: 650px;
   overflow: hidden;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
 }
 
 .intro__inner {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  z-index: 5;
+}
+
+.intro__info {
   position: absolute;
-  top: 50%;
+  top: 41.5%;
   left: 95px;
-  -webkit-transform: translateY(-53%);
-  -ms-transform: translateY(-53%);
-  transform: translateY(-53%);
+  min-width: 100%;
+  padding: 0 103px;
+  z-index: 5;
 }
 
 .intro h2 {
@@ -814,12 +823,15 @@ button,
 }
 
 .intro img {
-  height: 650px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center bottom;
   object-position: center bottom;
-  background-color: #d8d8d9;
 }
 
 .guide {
@@ -1641,6 +1653,11 @@ input[type=checkbox]:checked + label::after {
 }
 
 @media (max-width: 1023px) {
+  .wrapper {
+    -webkit-box-shadow: 0 5px 15px #d8d8d9;
+    box-shadow: 0 5px 15px #d8d8d9;
+  }
+
   .container {
     padding: 0 45px;
   }
@@ -1676,15 +1693,23 @@ input[type=checkbox]:checked + label::after {
   }
 
   .intro {
+    min-height: 638px;
     -webkit-box-shadow: none;
     box-shadow: none;
   }
 
   .intro__inner {
+    min-height: 638px;
+  }
+
+  .intro__info {
+    padding: 0 45px;
+    top: 42%;
     left: 0;
   }
 
   .intro h2 {
+    margin-bottom: 14px;
     padding-right: 0;
     font-size: 50px;
     line-height: 60px;
@@ -1694,10 +1719,6 @@ input[type=checkbox]:checked + label::after {
   .intro p {
     font-size: 18px;
     line-height: 21px;
-  }
-
-  .intro img {
-    height: 638px;
   }
 
   .guide {
@@ -1937,6 +1958,11 @@ input[type=checkbox]:checked + label::after {
 }
 
 @media (max-width: 767px) {
+  .wrapper {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
   .container {
     padding: 0 15px;
   }
@@ -2087,14 +2113,22 @@ input[type=checkbox]:checked + label::after {
     display: none;
   }
 
+  .intro {
+    min-height: 500px;
+  }
+
   .intro__inner {
-    -webkit-transform: translateY(-51%);
-    -ms-transform: translateY(-51%);
-    transform: translateY(-51%);
+    min-height: 500px;
+  }
+
+  .intro__info {
+    padding: 0 15px;
+    top: 35%;
   }
 
   .intro h2 {
     max-width: 80%;
+    margin-bottom: 12px;
     font-size: 36px;
     line-height: 45px;
   }
@@ -2103,10 +2137,6 @@ input[type=checkbox]:checked + label::after {
     max-width: 80%;
     font-size: 16px;
     line-height: 22px;
-  }
-
-  .intro img {
-    height: 500px;
   }
 
   .guide {

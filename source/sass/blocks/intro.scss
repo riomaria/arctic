@@ -1,25 +1,51 @@
 .intro {
   position: relative;
+  min-height: 650px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
 
   @include vp-1023 {
+    min-height: 638px;
     box-shadow: none;
+  }
+
+  @include vp-767 {
+    min-height: 500px;
   }
 }
 
 .intro__inner {
-  position: absolute;
-  top: 50%;
-  left: 95px;
-  transform: translateY(-53%);
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  z-index: 5;
 
   @include vp-1023 {
+    min-height: 638px;
+  }
+
+  @include vp-767 {
+    min-height: 500px;
+  }
+}
+
+.intro__info {
+  position: absolute;
+  top: 41.5%;
+  left: 95px;
+  min-width: 100%;
+  padding: 0 103px;
+  z-index: 5;
+
+  @include vp-1023 {
+    padding: 0 45px;
+    top: 42%;
     left: 0;
   }
 
   @include vp-767 {
-    transform: translateY(-51%);
+    padding: 0 15px;
+    top: 35%;
   }
 }
 
@@ -36,6 +62,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
+    margin-bottom: 14px;
     padding-right: 0;
     font-size: $fz-pre-huge;
     line-height: $lh-pre-huge;
@@ -44,6 +71,7 @@
 
   @include vp-767 {
     max-width: 80%;
+    margin-bottom: 12px;
     font-size: $fz-large;
     line-height: $lh-large;
   }
@@ -71,16 +99,11 @@
 }
 
 .intro img {
-  height: 650px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center bottom;
-  background-color: $color-quartz;
-
-  @include vp-1023 {
-    height: 638px;
-  }
-
-  @include vp-767 {
-    height: 500px;
-  }
 }
