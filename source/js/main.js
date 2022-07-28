@@ -5,23 +5,6 @@ import {initModals} from './modules/modals/init-modals';
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  // Smooth navigation
-
-  const anchorMenu = document.querySelectorAll('a[href^="#"]');
-
-  anchorMenu.forEach((item) => {
-
-    item.addEventListener('click', (evt) => {
-      evt.preventDefault();
-
-      const blockId = item.getAttribute('href');
-      document.querySelector('' + blockId).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    });
-  });
-
   // Mobile navigation
 
   const mainPage = document.querySelector('.wrapper');
@@ -39,11 +22,13 @@ window.addEventListener('DOMContentLoaded', () => {
   menuToggle.addEventListener('click', () => {
     if (mainHeader.hasAttribute('data-state')) {
       mainPage.removeAttribute('data-state');
+      mainPage.removeAttribute('data-scroll');
       mainHeader.removeAttribute('data-state');
       mainNavigation.removeAttribute('data-state');
       logoHeader.removeAttribute('data-state');
     } else {
       mainPage.setAttribute('data-state', 'is-open');
+      mainPage.setAttribute('data-scroll', 'is-disable');
       mainHeader.setAttribute('data-state', 'is-open');
       mainNavigation.setAttribute('data-state', 'is-open');
       logoHeader.setAttribute('data-state', 'is-open');
@@ -53,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
   itemMenu.forEach((item) => {
     item.addEventListener('click', () => {
       mainPage.removeAttribute('data-state');
+      mainPage.removeAttribute('data-scroll');
       mainHeader.removeAttribute('data-state');
       mainNavigation.removeAttribute('data-state');
       logoHeader.removeAttribute('data-state');
@@ -61,9 +47,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
   pageOverlay.addEventListener('click', () => {
     mainPage.removeAttribute('data-state');
+    mainPage.removeAttribute('data-scroll');
     mainHeader.removeAttribute('data-state');
     mainNavigation.removeAttribute('data-state');
     logoHeader.removeAttribute('data-state');
+  });
+
+  // Smooth navigation
+
+  const anchorMenu = document.querySelectorAll('a[href^="#"]');
+
+  anchorMenu.forEach((item) => {
+
+    item.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      const blockId = item.getAttribute('href');
+      document.querySelector('' + blockId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    });
   });
 
   // ---------------------------------
