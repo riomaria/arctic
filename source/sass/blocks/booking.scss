@@ -51,8 +51,10 @@
   }
 }
 
-.booking__form legend {
+.booking__form h3 {
+  margin: 0;
   margin-bottom: 27px;
+  padding: 0;
   font-size: $fz-modarate;
   line-height: $lh-interium;
   font-weight: $fw-medium;
