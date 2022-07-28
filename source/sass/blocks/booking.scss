@@ -91,6 +91,10 @@
   }
 }
 
+input[type="checkbox"] {
+  bottom: 100px;
+}
+
 input[type="checkbox"] + label {
   position: relative;
   margin: 0;
