@@ -21,15 +21,6 @@
   height: 38px;
   fill: $color-default-white;
 
-  &:hover,
-  &:focus {
-    fill: $color-primary;
-  }
-
-  &:active {
-    fill: $color-primary--medium;
-  }
-
   @include vp-1023 {
     width: 38px;
     height: 20px;

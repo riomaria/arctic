@@ -3,6 +3,7 @@
   min-width: 240px;
   height: 386px;
   overflow: hidden;
+  touch-action: manipulation;
   cursor: pointer;
 
   &::after {

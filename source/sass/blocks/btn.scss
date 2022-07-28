@@ -12,6 +12,7 @@
   background-color: $color-default-white;
   transition: background-color $trans-default;
   user-select: none;
+  touch-action: manipulation;
   cursor: pointer;
 
   &:hover,
