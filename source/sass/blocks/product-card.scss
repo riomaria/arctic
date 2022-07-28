@@ -66,6 +66,7 @@
 .product-card:hover .product-card__info,
 .product-card:focus .product-card__info {
   display: flex;
+  overflow: auto;
 }
 
 .product-card img {
@@ -133,25 +134,4 @@
 .product-card a {
   margin-top: auto;
   text-decoration: none;
-  // display: block;
-  // width: 100%;
-  // min-height: 40px;
-  // padding: 10px 12px;
-  // text-align: center;
-  // font-size: $fz-normal;
-  // line-height: $lh-pre-medium;
-  // font-weight: $fw-semibold;
-  // color: $color-default-black;
-  // background-color: $color-default-white;
-  // cursor: pointer;
-
-  // &:hover,
-  // &:focus {
-  //   background-color: $color-quartz;
-  // }
-
-  // &:active {
-  //   color: $color-quartz;
-  //   background-color: $color-default-white;
-  // }
 }
