@@ -692,15 +692,6 @@ button,
   fill: #f9fbfd;
 }
 
-.logo-header svg:hover,
-.logo-header svg:focus {
-  fill: #45abce;
-}
-
-.logo-header svg:active {
-  fill: rgba(69, 171, 206, 0.5);
-}
-
 .main-navigation ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1015,6 +1006,8 @@ button,
   min-width: 240px;
   height: 386px;
   overflow: hidden;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
 }
 
@@ -1502,7 +1495,6 @@ input[type="checkbox"]:checked + label::after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-width: 770px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1546,7 +1538,8 @@ input[type="checkbox"]:checked + label::after {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-width: 250px;
+  max-width: 220px;
+  min-width: 140px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1607,6 +1600,8 @@ input[type="checkbox"]:checked + label::after {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
 }
 
@@ -1911,6 +1906,7 @@ input[type="checkbox"]:checked + label::after {
 
   .social ul {
     max-width: 200px;
+    min-width: 100px;
   }
 
   .social li {

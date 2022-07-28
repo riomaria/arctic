@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="main-header" data-js="not-js">
+      <header class="main-header" data-js="not-js" id="top">
         <div class="container main-header__inner">
           <a class="main-header__logo logo-header">
             <svg width="70" height="38" aria-hidden="true" focusable="false">
@@ -374,11 +374,12 @@
               <label class="visually-hidden" for="user-name">Имя</label>
               <input id="user-name" type="text" placeholder="Имя" name="userName" pattern="[A-Za-zА-Яа-яЕё0-9]{1,19}" required>
               <label class="visually-hidden" for="user-phone">Телефон</label>
-              <input id="user-phone" type="tel" placeholder="Телефон" name="userPhone" pattern="8[0-9]{10}" required>
+              <input id="user-phone" type="tel" placeholder="Телефон" name="userPhone" minlength="11" required>
               <label class="visually-hidden" for="user-mail">Email</label>
               <input id="user-mail" type="email" placeholder="Email" required>
               <input class="visually-hidden" type="checkbox" id="personal-agree" name="personalAgree" checked required>
               <label for="personal-agree">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</label>
+
               <button class="booking__btn btn" type="submit">Оставить заявку</button>
             </form>
           </div>
@@ -463,7 +464,7 @@
       <footer class="main-footer">
         <div class="container main-footer__inner">
           <div class="main-footer__logo">
-            <a>
+            <a href="#top">
               <svg width="70" height="38" aria-hidden="true" focusable="false">
                 <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
               </svg>
