@@ -31,12 +31,14 @@
 }
 
 .booking__form {
+  display: flex;
+  flex-direction: column;
   width: 403px;
   max-width: 50%;
   min-height: 455px;
   padding: 43px 50px;
   background-color: $color-default-black;
-  box-shadow: 0px 4px 45px $color-default-black--light;
+  box-shadow: 0 4px 45px $color-default-black--light;
 
   @include vp-1023 {
     max-width: 403px;
@@ -47,14 +49,6 @@
     max-width: 403px;
     padding: 35px 30px 40px 30px;
   }
-}
-
-.booking__form fieldset {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  border: none;
 }
 
 .booking__form legend {
@@ -77,10 +71,10 @@
   padding: 13px 16px 9px 16px;
   font-size: $fz-normal;
   line-height: $lh-pre-medium;
-  color:  $color-default-black;
+  color: $color-default-black;
   border: none;
   background-color: $color-default-white;
-  -moz-appearance:textfield;
+  appearance: textfield;
   cursor: text;
 
   &:hover,
@@ -95,7 +89,7 @@
   }
 }
 
-input[type=checkbox] + label {
+input[type="checkbox"] + label {
   position: relative;
   margin: 0;
   margin-bottom: 30px;
@@ -117,14 +111,14 @@ input[type=checkbox] + label {
   }
 }
 
-input[type=checkbox] + label::before {
+input[type="checkbox"] + label::before {
   position: absolute;
   top: 0;
   left: 0;
   width: 18px;
   height: 18px;
   background-color: $color-default-white;
-  content: '';
+  content: "";
 
   @include vp-767 {
     width: 20px;
@@ -132,22 +126,22 @@ input[type=checkbox] + label::before {
   }
 }
 
-input[type=checkbox]:hover + label::before,
-input[type=checkbox]:focus + label::before {
+input[type="checkbox"]:hover + label::before,
+input[type="checkbox"]:focus + label::before {
   background-color: $color-quartz;
   border: 3px solid $color-primary;
 }
 
-input[type=checkbox]:checked + label::after {
+input[type="checkbox"]:checked + label::after {
   position: absolute;
   top: 5px;
   left: 4px;
   width: 10px;
   height: 7px;
-  background-image: url("../../img/svg/form-check.svg");
+  background-image: url("../img/svg/form-check.svg");
   background-position: center;
   background-repeat: no-repeat;
-  content: '';
+  content: "";
 
   @include vp-767 {
     top: 7px;

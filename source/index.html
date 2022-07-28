@@ -12,6 +12,11 @@
     <link rel="apple-touch-icon" href="./img/favicons/180.png">
     <link rel="manifest" href="./manifest.webmanifest">
 
+    <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Montserrat-SemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Montserrat-Bold.woff22" as="font" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -53,18 +58,29 @@
         <h1 class="visually-hidden">Агрегатор туристический путешествий в Антарктику</h1>
         <section class="intro">
           <div class="container intro__inner">
-            <div class="intro__info">
-              <h2>Круизы в&nbsp;Антарктику</h2>
-              <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
-            </div>
+            <h2>Круизы в&nbsp;Антарктику</h2>
+            <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
           </div>
           <picture>
             <source type="image/webp" media="(max-width: 767px)" srcset="./img/intro/intro-mobile.webp 1x, ./img/intro/intro-mobile@2x.webp 2x">
             <source type="image/webp" media="(max-width: 1023px)" srcset="./img/intro/intro-tablet.webp 1x, ./img/intro/intro-tablet@2x.webp 2x">
             <source type="image/webp" srcset="./img/intro/intro-desk.webp 1x, ./img/intro/intro-desk@2x.webp 2x">
-            <source media="(max-width: 767px)" srcset="./img/intro/intro-mobile.jpg 1x, ./img/intro/intro-mobile@2x.jpg 2x" width="320" height="500">
-            <source media="(max-width: 1023px)" srcset="./img/intro/intro-tablet.jpg 1x, ./img/intro/intro-tablet@2x.jpg 2x" width="768" height="638">
-            <img src="./img/intro/intro-desk.jpg" srcset="./img/intro/intro-desk@2x.jpg 2x" width="1366" height="650" alt="Небо и снежные ледники Арктики.">
+            <!-- mobile: 1x - 320px; 2x - 640px; tablet: 1x - 768px; 2x - 1536px  desktop: 1x - 1366px; 2x - 2732px  -->
+            <img srcset="
+              ./img/intro/intro-mobile.jpg 320w,
+              ./img/intro/intro-mobile@2x.jpg 640w,
+              ./img/intro/intro-tablet.jpg 768w,
+              ./img/intro/intro-tablet@2x.jpg 1536w,
+              ./img/intro/intro-desk.jpg 1366w,
+              ./img/intro/intro-desk@2x.jpg 2732w
+            " sizes="
+              (min-width: 1024px) 1366px,
+              ((min-width: 1024px) and (min-resolution: 2dppx)) 2732px,
+              (min-width: 768px) 768px,
+              ((min-width: 768px) and (min-resolution: 2dppx)) 1536px,
+              (max-width: 767px) 320px,
+              ((max-width: 767px) and (min-resolution: 2dppx)) 640px
+            " src="./img/intro/intro-desk.jpg" width="1366" height="650" alt="Небо и снежные ледники Арктики.">
           </picture>
         </section>
         <section class="guide" id="guide">
@@ -78,10 +94,23 @@
                 <source type="image/webp" media="(max-width: 767px)" srcset="./img/guide/guide-desk.webp 1x, ./img/guide/guide-desk@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 1023px)" srcset="./img/guide/guide-tablet.webp 1x, ./img/guide/guide-tablet@2x.webp 2x">
                 <source type="image/webp" srcset="./img/guide/guide-desk.webp 1x, ./img/guide/guide-desk@2x.webp 2x">
-                <source media="(max-width: 767px)" srcset="./img/guide/guide-mobile.jpg 1x, ./img/guide/guide-mobile@2x.jpg 2x" width="290" height="186">
-                <source media="(max-width: 1023px)" srcset="./img/guide/guide-tablet.jpg 1x, ./img/guide/guide-tablet@2x.jpg 2x" width="324" height="264">
-                <img src="./img/guide/guide-desk.jpg" srcset="./img/guide/guide-desk@2x.jpg 2x" width="560" height="301" alt="Три пингвина на снежном склоне.">
-              </picture>
+                <!-- mobile: 1x - 290px; 2x - 580px; tablet: 1x - 324px; 2x - 648px  desktop: 1x - 560px; 2x - 1120px  -->
+                <img srcset="
+                ./img/guide/guide-mobile.jpg 290w,
+                ./img/guide/guide-mobile@2x.jpg 580w,
+                ./img/guide/guide-tablet.jpg 324w,
+                ./img/guide/guide-tablet@2x.jpg 648w,
+                ./img/guide/guide-desk.jpg 560w,
+                ./img/guide/guide-desk@2x.jpg 1120w
+              " sizes="
+                (min-width: 1024px) 560px,
+                ((min-width: 1024px) and (min-resolution: 2dppx)) 1120px,
+                (min-width: 768px) 324px,
+                ((min-width: 768px) and (min-resolution: 2dppx)) 648px,
+                (max-width: 767px) 290px,
+                ((max-width: 767px) and (min-resolution: 2dppx)) 580px
+              " src="./img/guide/guide-desk.jpg" width="560" height="301" alt="Три пингвина на снежном склоне.">
+            </picture>
             </div>
           </div>
         </section>
@@ -116,9 +145,16 @@
             <source type="image/webp" media="(max-width: 767px)" srcset="./img/bg/features-mobile.webp">
             <source type="image/webp" media="(max-width: 1023px)" srcset="./img/bg/features-tablet.webp">
             <source type="image/webp" srcset="./img/bg/features-desk.webp">
-            <source media="(max-width: 767px)" srcset="./img/bg/form-mobile.jpg" width="320" height="997">
-            <source media="(max-width: 1023px)" srcset="./img/bg/features-tablet.jpg" width="768" height="588">
-            <img src="./img/bg/features-desk.jpg" width="1366" height="562" alt="Заблюренный вид Арктики.">
+            <!-- mobile: 1x - 320px; tablet: 1x - 768px;  desktop: 1x - 1366px;  -->
+            <img srcset="
+            ./img/bg/features-mobile 320w,
+            ./img/bg/features-tablet.jpg 768w,
+            ./img/bg/features-desk.jpg 1366w,
+            " sizes="
+            (min-width: 1024px) 1366px,
+            (min-width: 768px) 768px,
+            (max-width: 767px) 320px
+            " src="./img/bg/features-desk.jpg" width="1366" height="562" alt="Снежная Арктика.">
           </picture>
         </section>
         <section class="catalog" id="catalog">
@@ -129,7 +165,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Астория&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Фолклендские острова - Антарктида</dd>
@@ -145,7 +181,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/astoria.webp 1x, ./img/catalog/astoria@2x.webp 2x">
-                    <img src="./img/catalog/astoria.jpg" srcset="./img/catalog/astoria@2x.jpg 2x" width="260" height="386" alt="Замерзжий океан и заснеженная вдалеке вершина горы.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/astoria.jpg" srcset="./img/catalog/astoria@2x.jpg 2x" width="260" height="386" alt="Океан льда и заснеженная вершина горы.">
                   </picture>
                 </article>
               </li>
@@ -153,7 +190,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Элайн&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Фолклендские острова - Антарктида - Чили</dd>
@@ -169,7 +206,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/astoria.webp 1x, ./img/catalog/astoria@2x.webp 2x">
-                    <img src="./img/catalog/astoria.jpg" srcset="./img/catalog/astoria@2x.jpg 2x" width="260" height="386" alt="Замерзжий океан.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/astoria.jpg" srcset="./img/catalog/astoria@2x.jpg 2x" width="260" height="386" alt="Бескрайние ледяные просторы.">
                   </picture>
                 </article>
               </li>
@@ -177,7 +215,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Атлантис&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Южная Георгия и Южные Сандвичевы Острова - Антарктида</dd>
@@ -193,7 +231,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/atlantis.webp 1x, ./img/catalog/atlantis@2x.webp 2x">
-                    <img src="./img/catalog/atlantis.jpg" srcset="./img/catalog/atlantis@2x.jpg 2x" width="260" height="386" alt="Небольшие айберги в океане.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/atlantis.jpg" srcset="./img/catalog/atlantis@2x.jpg 2x" width="260" height="386" alt="Небольшие айсберги в океане.">
                   </picture>
                 </article>
               </li>
@@ -201,7 +240,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Одиссей&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Чили - Антарктида</dd>
@@ -217,7 +256,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/odissey.webp 1x, ./img/catalog/odissey@2x.webp 2x">
-                    <img src="./img/catalog/odissey.jpg" srcset="./img/catalog/odissey@2x.jpg 2x" width="260" height="386" alt="Облачное небо и льды Антарктики.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/odissey.jpg" srcset="./img/catalog/odissey@2x.jpg 2x" width="260" height="386" alt="Облачное небо и льды Арктики.">
                   </picture>
                 </article>
               </li>
@@ -225,7 +265,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Олимпия&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Фолклендские острова - Южная Георгия - Антарктида</dd>
@@ -241,6 +281,7 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/olimpia.webp 1x, ./img/catalog/olimpia@2x.webp 2x">
+                    <!-- 1x - 309px; 2x - 618px;  -->
                     <img src="./img/catalog/olimpia.jpg" srcset="./img/catalog/olimpia@2x.jpg 2x" width="260" height="386" alt="Пингвины во льдах.">
                   </picture>
                 </article>
@@ -249,7 +290,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Аврора&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Антарктида - Чили</dd>
@@ -265,7 +306,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/avrora.webp 1x, ./img/catalog/avrora@2x.webp 2x">
-                    <img src="./img/catalog/avrora.jpg" srcset="./img/catalog/avrora@2x.jpg 2x" width="260" height="386" alt="Вид на Антарктиду с возвышенности.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/avrora.jpg" srcset="./img/catalog/avrora@2x.jpg 2x" width="260" height="386" alt="Вид на Арктику с возвышенности.">
                   </picture>
                 </article>
               </li>
@@ -273,7 +315,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Леонор&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Чили - Южная Георгия - Антарктида - Аргентина</dd>
@@ -289,7 +331,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/leonor.webp 1x, ./img/catalog/leonor@2x.webp 2x">
-                    <img src="./img/catalog/leonor.jpg" srcset="./img/catalog/leonor@2x.jpg 2x" width="260" height="386" alt="Небольшая круизная лодка в океане.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/leonor.jpg" srcset="./img/catalog/leonor@2x.jpg 2x" width="260" height="386" alt="Круизная лодка в океане.">
                   </picture>
                 </article>
               </li>
@@ -297,7 +340,7 @@
                 <article class="product-card">
                   <div class="product-card__inner">
                     <h2>Круиз &quot;Минион - 1&quot;</h2>
-                    <div class="product-card--hover">
+                    <div class="product-card__info">
                       <dl>
                         <dt>Маршрут</dt>
                         <dd>Аргентина - Антарктида</dd>
@@ -313,7 +356,8 @@
                   </div>
                   <picture>
                     <source type="image/webp" srcset="./img/catalog/minion.webp 1x, ./img/catalog/minion@2x.webp 2x">
-                    <img src="./img/catalog/minion.jpg" srcset="./img/catalog/minion@2x.jpg 2x" width="260" height="386" alt="Высаживающая группа туристов во льдах Антарктики.">
+                    <!-- 1x - 309px; 2x - 618px;  -->
+                    <img src="./img/catalog/minion.jpg" srcset="./img/catalog/minion@2x.jpg 2x" width="260" height="386" alt="Группа туристов во льдах Арктики.">
                   </picture>
                 </article>
               </li>
@@ -327,27 +371,38 @@
               <p>Забронируйте тур за&nbsp;3-6 месяцев до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%</p>
             </div>
             <form class="booking__form"  method="get" action="https://echo.htmlacademy.ru" autocomplete="off">
-              <fieldset>
-                <legend>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</legend>
-                <label class="visually-hidden" for="user-name">Имя</label>
-                <input id="user-name" type="text" placeholder="Имя" name="userName" minlength="1" maxlength="11" required>
-                <label class="visually-hidden" for="user-phone">Телефон</label>
-                <input id="user-phone" type="tel" placeholder="Телефон" name="userPhone" minlength="7" maxlength="11" required>
-                <label class="visually-hidden" for="user-mail">Email</label>
-                <input id="user-mail" type="email" placeholder="Email" required>
-                <input class="visually-hidden" type="checkbox" id="personal-agree" name="personalAgree" checked required>
-                <label for="personal-agree">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</label>
-                <button class="booking__btn btn" type="submit">Оставить заявку</button>
-              </fieldset>
+              <legend>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</legend>
+              <label class="visually-hidden" for="user-name">Имя</label>
+              <input id="user-name" type="text" placeholder="Имя" name="userName" minlength="1" maxlength="11" required>
+              <label class="visually-hidden" for="user-phone">Телефон</label>
+              <input id="user-phone" type="tel" placeholder="Телефон" name="userPhone" minlength="7" maxlength="11" required>
+              <label class="visually-hidden" for="user-mail">Email</label>
+              <input id="user-mail" type="email" placeholder="Email" required>
+              <input class="visually-hidden" type="checkbox" id="personal-agree" name="personalAgree" checked required>
+              <label for="personal-agree">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</label>
+              <button class="booking__btn btn" type="submit">Оставить заявку</button>
             </form>
           </div>
           <picture>
             <source type="image/webp" media="(max-width: 767px)" srcset="./img/bg/form-mobile.webp 1x, ./img/bg/form-mobile@2x.webp 2x">
             <source type="image/webp" media="(max-width: 1023px)" srcset="./img/bg/form-tablet.webp 1x, ./img/bg/form-tablet@2x.webp 2x">
             <source type="image/webp" srcset="./img/bg/form-desk.webp 1x, ./img/bg/form-desk@2x.webp 2x">
-            <source media="(max-width: 767px)" srcset="./img/bg/form-mobile.jpg 1x, ./img/bg/form-mobile@2x.jpg 2x" width="320" height="760">
-            <source media="(max-width: 1023px)" srcset="./img/bg/form-tablet.jpg 1x, ./img/bg/form-tablet@2x.jpg 2x" width="768" height="805">
-            <img src="./img/bg/form-desk.jpg" srcset="./img/bg/form-desk@2x.jpg 2x" width="1366" height="555" alt="Переливающийся лед на солнце и горы вдали.">
+            <!-- mobile: 1x - 320px; 2x - 640px; tablet: 1x - 768px; 2x - 1536px  desktop: 1x - 1366px; 2x - 2732px  -->
+            <img srcset="
+              ./img/bg/form-mobile.jpg 320w,
+              ./img/bg/form-mobile@2x.jpg 640w,
+              ./img/bg/form-tablet.jpg 768w,
+              ./img/bg/form-tablet@2x.jpg 1536w,
+              ./img/bg/form-desk.jpg 1366w,
+              ./img/bg/form-desk@2x.jpg 2732w
+            " sizes="
+              (min-width: 1024px) 1366px,
+              ((min-width: 1024px) and (min-resolution: 2dppx)) 2732px,
+              (min-width: 768px) 768px,
+              ((min-width: 768px) and (min-resolution: 2dppx)) 1536px,
+              (max-width: 767px) 320px,
+              ((max-width: 767px) and (min-resolution: 2dppx)) 640px
+            " src="./img/bg/form-desk.jpg" width="1366" height="555" alt="Разломы льда.">
           </picture>
         </section>
         <section class="contacts" id="contacts">
@@ -378,9 +433,22 @@
                 <source type="image/webp" media="(max-width: 767px)" srcset="./img/map/map-mobile.webp 1x, ./img/map/map-mobile@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 1023px)" srcset="./img/map/map-tablet.webp 1x, ./img/map/map-tablet@2x.webp 2x">
                 <source type="image/webp" srcset="./img/map/map-desk.webp 1x, ./img/map/map-desk@2x.webp 2x">
-                <source media="(max-width: 767px)" srcset="./img/map/map-mobile.png 1x, ./img/map/map-mobile@2x.png 2x" width="290" height="316">
-                <source media="(max-width: 1023px)" srcset="./img/map/map-tablet.png 1x, ./img/map/map-tablet@2x.png 2x" width="324" height="335">
-                <img src="./img/map/map-desk.png" srcset="./img/map/map-desk@2x.png 2x" width="560" height="306" alt="г. Санкт Петербург, ул. Большая Конюшенная, 19/8">
+                <!-- mobile: 1x - 290px; 2x - 580px; tablet: 1x - 324px; 2x - 648px  desktop: 1x - 560px; 2x - 1120px  -->
+                <img srcset="
+                ./img/map/map-mobile.png 290w,
+                ./img/map/map-mobile@2x.png 580w,
+                ./img/map/map-tablet.png 324w,
+                ./img/map/map-tablet@2x.png 648w,
+                ./img/map/map-desk.png 560w,
+                ./img/map/map-desk@2x.png 1120w
+              " sizes="
+                (min-width: 1024px) 560px,
+                ((min-width: 1024px) and (min-resolution: 2dppx)) 1120px,
+                (min-width: 768px) 324px,
+                ((min-width: 768px) and (min-resolution: 2dppx)) 648px,
+                (max-width: 767px) 290px,
+                ((max-width: 767px) and (min-resolution: 2dppx)) 580px
+              " src="./img/map/map-desk.png" width="560" height="306" alt="г. Санкт Петербург, ул. Большая Конюшенная, 19/8">
               </picture>
               <iframe src="https://yandex.ru/map-widget/v1/-/CCURI4UUcB" width="560" height="306"></iframe>
               <a href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSEQPQFtjfXVyeXpgYQ==/?ll=30.323117%2C59.938635&utm_source=main_stripe_big&z=16.93" target="_blank">

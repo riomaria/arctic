@@ -80,22 +80,6 @@
   }
 }
 
-.contacts li {
-
-  @include vp-1023 {
-    margin-bottom: 0px;
-  }
-
-  @include vp-767 {
-    margin-bottom: 22px;
-    margin-bottom: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .contacts__item a {
   position: relative;
   display: block;
@@ -122,8 +106,8 @@
   }
 
   @include vp-767 {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -141,7 +125,7 @@
   height: 22px;
 
   @include vp-767 {
-    top: 0px;
+    top: 0;
   }
 }
 

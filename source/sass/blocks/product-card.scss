@@ -41,7 +41,7 @@
   }
 }
 
-.product-card--hover {
+.product-card__info {
   display: none;
   flex-direction: column;
   height: 100%;
@@ -52,7 +52,7 @@
   top: 0;
   padding: 28px 25px 35px 25px;
   background-color: $color-default-black;
-  box-shadow: 0px 4px 35px rgba(1, 28, 64, 0.15);
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
 
   @include vp-1023 {
     padding: 30px 35px 35px 35px;
@@ -63,8 +63,8 @@
   }
 }
 
-.product-card:hover .product-card--hover,
-.product-card:focus .product-card--hover {
+.product-card:hover .product-card__info,
+.product-card:focus .product-card__info {
   display: flex;
 }
 

@@ -29,14 +29,14 @@ html {
   // PP
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-image: url( '../../img/pp/mobile.jpg' );
+  background-image: url("../../img/pp/mobile.jpg");
 
   @media (min-width: 768px) {
-    background-image: url( '../../img/pp/tablet.jpg' );
+    background-image: url("../../img/pp/tablet.jpg");
   }
 
   @media (min-width: 1024px) {
-    background-image: url( '../../img/pp/desk.jpg' );
+    background-image: url("../../img/pp/desk.jpg");
   }
 }
 
@@ -112,7 +112,7 @@ input[type="search"]::-webkit-search-results-decoration {
   appearance: none;
 }
 
-input[number] arrows removal
+// input[number] arrows removal,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   margin: 0;
