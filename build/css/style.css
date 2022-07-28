@@ -1231,6 +1231,10 @@ button,
   color: rgba(1, 28, 64, 0.7);
 }
 
+input[type="checkbox"] {
+  bottom: 100px;
+}
+
 input[type="checkbox"] + label {
   position: relative;
   margin: 0;
