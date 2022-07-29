@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Smooth navigation
 
-  const anchorMenu = document.querySelectorAll('a[href^="#"]');
+  const anchorMenu = document.querySelectorAll('.main-navigation a[href^="#"]');
 
   anchorMenu.forEach((item) => {
 
@@ -88,6 +88,18 @@ window.addEventListener('DOMContentLoaded', () => {
     inputName.value = '';
     inputPhone.value = '';
     inputMail.value = '';
+  });
+
+  // ---------------------------------
+  // Product card btn
+
+  const cards = document.querySelectorAll('.product-card a');
+
+  cards.forEach((item) => {
+    item.addEventListener('mousedown', (evt) => {
+      evt.preventDefault();
+      item.focus();
+    });
   });
 
   // Utils
