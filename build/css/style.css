@@ -440,6 +440,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-image: url("../../img/pp/mobile.jpg");
 }
 
 body {
@@ -1037,7 +1040,7 @@ button,
 
 .product-card__inner {
   position: absolute;
-  top: 308px;
+  top: 307px;
   left: 0;
   right: 0;
   display: -webkit-box;
@@ -1053,16 +1056,17 @@ button,
 }
 
 .product-card__info {
-  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
+  opacity: 0;
 }
 
 .product-card:hover .product-card__inner,
-.product-card:focus .product-card__inner {
+.product-card:focus .product-card__inner,
+.product-card:focus-within .product-card__inner {
   top: 0;
   padding: 28px 25px 35px 25px;
   background-color: #011c40;
@@ -1071,11 +1075,13 @@ button,
 }
 
 .product-card:hover .product-card__info,
-.product-card:focus .product-card__info {
+.product-card:focus .product-card__info,
+.product-card:focus-within .product-card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: auto;
+  opacity: 1;
 }
 
 .product-card img {
@@ -1105,6 +1111,7 @@ button,
 .product-card dl {
   margin: 0;
   padding: 0;
+  overflow-y: auto;
   list-style: none;
 }
 
@@ -1133,6 +1140,9 @@ button,
 .product-card a {
   margin-top: auto;
   text-decoration: none;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .booking {
@@ -1640,6 +1650,18 @@ input[type="checkbox"]:checked + label::after {
   }
 } */
 
+@media (min-width: 768px) {
+  html {
+    background-image: url("../../img/pp/tablet.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    background-image: url("../../img/pp/desk.jpg");
+  }
+}
+
 @media (max-width: 1023px) {
   .wrapper {
     -webkit-box-shadow: 0 5px 15px #d8d8d9;
@@ -1793,7 +1815,8 @@ input[type="checkbox"]:checked + label::after {
   }
 
   .product-card:hover .product-card__inner,
-  .product-card:focus .product-card__inner {
+  .product-card:focus .product-card__inner,
+  .product-card:focus-within .product-card__inner {
     padding: 30px 35px 35px 35px;
   }
 
@@ -2201,7 +2224,8 @@ input[type="checkbox"]:checked + label::after {
   }
 
   .product-card:hover .product-card__inner,
-  .product-card:focus .product-card__inner {
+  .product-card:focus .product-card__inner,
+  .product-card:focus-within .product-card__inner {
     padding: 30px 25px 35px 25px;
   }
 
