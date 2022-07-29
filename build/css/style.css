@@ -440,9 +440,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-image: url("../../img/pp/mobile.jpg");
 }
 
 body {
@@ -924,7 +921,7 @@ button,
   list-style: none;
 }
 
-.features li {
+.features__item {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 200px;
   flex: 1 1 200px;
@@ -956,11 +953,11 @@ button,
 
 .features svg {
   position: absolute;
-  top: 30px;
-  left: 30px;
   display: block;
+  top: 35px;
+  left: 28px;
   width: 42px;
-  height: 32px;
+  height: 21px;
 }
 
 .features img {
@@ -973,6 +970,13 @@ button,
   -o-object-fit: cover;
   object-fit: cover;
   background-color: #d8d8d9;
+}
+
+.features__item--special svg {
+  top: 30px;
+  left: 30px;
+  width: 27px;
+  height: 32px;
 }
 
 .catalog {
@@ -1241,12 +1245,16 @@ button,
   color: rgba(1, 28, 64, 0.7);
 }
 
-input[type="checkbox"] {
-  bottom: 100px;
+.booking__form input:disabled,
+.booking__form input:hover:disabled {
+  background-color: #d8d8d9;
+  opacity: 0.5;
+  cursor: none;
 }
 
-input[type="checkbox"] + label {
+.booking__form span {
   position: relative;
+  display: block;
   margin: 0;
   margin-bottom: 30px;
   padding-top: 3px;
@@ -1258,7 +1266,7 @@ input[type="checkbox"] + label {
   cursor: pointer;
 }
 
-input[type="checkbox"] + label::before {
+.booking__form span::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1268,13 +1276,7 @@ input[type="checkbox"] + label::before {
   content: "";
 }
 
-input[type="checkbox"]:hover + label::before,
-input[type="checkbox"]:focus + label::before {
-  background-color: #d8d8d9;
-  border: 3px solid #45abce;
-}
-
-input[type="checkbox"]:checked + label::after {
+.booking__form input[type="checkbox"]:checked + span::after {
   position: absolute;
   top: 5px;
   left: 4px;
@@ -1284,6 +1286,24 @@ input[type="checkbox"]:checked + label::after {
   background-position: center;
   background-repeat: no-repeat;
   content: "";
+}
+
+.booking__form input[type="checkbox"]:hover + span::before,
+.booking__form input[type="checkbox"]:focus + span::before {
+  background-color: #d8d8d9;
+  border: 3px solid #45abce;
+}
+
+.booking__form input[type="checkbox"]:disabled + span::before,
+.booking__form input[type="checkbox"]:hover:disabled + span::before,
+.booking__form input[type="checkbox"]:focus:disabled + span::before {
+  background-color: #d8d8d9;
+  opacity: 0.5;
+  border: none;
+}
+
+.booking__form [type="checkbox"]:disabled + span {
+  cursor: none;
 }
 
 .booking button {
@@ -1650,18 +1670,6 @@ input[type="checkbox"]:checked + label::after {
   }
 } */
 
-@media (min-width: 768px) {
-  html {
-    background-image: url("../../img/pp/tablet.jpg");
-  }
-}
-
-@media (min-width: 1024px) {
-  html {
-    background-image: url("../../img/pp/desk.jpg");
-  }
-}
-
 @media (max-width: 1023px) {
   .wrapper {
     -webkit-box-shadow: 0 5px 15px #d8d8d9;
@@ -1772,7 +1780,7 @@ input[type="checkbox"]:checked + label::after {
     margin-right: -30px;
   }
 
-  .features li {
+  .features__item {
     min-height: 310px;
     margin-right: 30px;
     margin-bottom: 30px;
@@ -1785,9 +1793,14 @@ input[type="checkbox"]:checked + label::after {
   }
 
   .features svg {
-    top: 25px;
+    top: 24px;
     left: 20px;
-    width: 38px;
+    width: 36px;
+    height: 26px;
+  }
+
+  .features__item--special svg {
+    width: 21px;
     height: 26px;
   }
 
@@ -2190,7 +2203,7 @@ input[type="checkbox"]:checked + label::after {
     line-height: 36px;
   }
 
-  .features li {
+  .features__item {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 290px;
     flex: 1 1 290px;
@@ -2252,7 +2265,7 @@ input[type="checkbox"]:checked + label::after {
     text-align: center;
   }
 
-  input[type="checkbox"] + label {
+  .booking__form span {
     max-width: 180px;
     margin-bottom: 26px;
     padding-top: 0;
@@ -2261,12 +2274,12 @@ input[type="checkbox"]:checked + label::after {
     line-height: 12px;
   }
 
-  input[type="checkbox"] + label::before {
+  .booking__form span::before {
     width: 20px;
     height: 20px;
   }
 
-  input[type="checkbox"]:checked + label::after {
+  .booking__form input[type="checkbox"]:checked + span::after {
     top: 7px;
     left: 5px;
   }

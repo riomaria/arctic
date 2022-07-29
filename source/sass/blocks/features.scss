@@ -55,7 +55,7 @@
   }
 }
 
-.features li {
+.features__item {
   flex: 1 1 200px;
   position: relative;
   min-width: 25%;
@@ -104,16 +104,16 @@
 
 .features svg {
   position: absolute;
-  top: 30px;
-  left: 30px;
   display: block;
+  top: 35px;
+  left: 28px;
   width: 42px;
-  height: 32px;
+  height: 21px;
 
   @include vp-1023 {
-    top: 25px;
+    top: 24px;
     left: 20px;
-    width: 38px;
+    width: 36px;
     height: 26px;
   }
 }
@@ -127,4 +127,16 @@
   height: 100%;
   object-fit: cover;
   background-color: $color-quartz;
+}
+
+.features__item--special svg {
+  top: 30px;
+  left: 30px;
+  width: 27px;
+  height: 32px;
+
+  @include vp-1023 {
+    width: 21px;
+    height: 26px;
+  }
 }

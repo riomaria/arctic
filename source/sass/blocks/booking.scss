@@ -89,14 +89,18 @@
     line-height: $lh-pre-medium;
     color: $color-default-black--dark;
   }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: $color-quartz;
+    opacity: 0.5;
+    cursor: none;
+  }
 }
 
-input[type="checkbox"] {
-  bottom: 100px;
-}
-
-input[type="checkbox"] + label {
+.booking__form span {
   position: relative;
+  display: block;
   margin: 0;
   margin-bottom: 30px;
   padding-top: 3px;
@@ -107,6 +111,16 @@ input[type="checkbox"] + label {
   color: $color-default-white;
   cursor: pointer;
 
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-color: $color-default-white;
+    content: "";
+  }
+
   @include vp-767 {
     max-width: 180px;
     margin-bottom: 26px;
@@ -114,31 +128,15 @@ input[type="checkbox"] + label {
     padding-bottom: 0;
     padding-left: 28px;
     line-height: $fz-small;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
-input[type="checkbox"] + label::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 18px;
-  height: 18px;
-  background-color: $color-default-white;
-  content: "";
-
-  @include vp-767 {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-input[type="checkbox"]:hover + label::before,
-input[type="checkbox"]:focus + label::before {
-  background-color: $color-quartz;
-  border: 3px solid $color-primary;
-}
-
-input[type="checkbox"]:checked + label::after {
+.booking__form input[type="checkbox"]:checked + span::after {
   position: absolute;
   top: 5px;
   left: 4px;
@@ -153,6 +151,24 @@ input[type="checkbox"]:checked + label::after {
     top: 7px;
     left: 5px;
   }
+}
+
+.booking__form input[type="checkbox"]:hover + span::before,
+.booking__form input[type="checkbox"]:focus + span::before {
+  background-color: $color-quartz;
+  border: 3px solid $color-primary;
+}
+
+.booking__form input[type="checkbox"]:disabled + span::before,
+.booking__form input[type="checkbox"]:hover:disabled + span::before,
+.booking__form input[type="checkbox"]:focus:disabled + span::before {
+  background-color: $color-quartz;
+  opacity: 0.5;
+  border: none;
+}
+
+.booking__form [type="checkbox"]:disabled + span {
+  cursor: none;
 }
 
 .booking button {
